@@ -12,9 +12,30 @@ void read_line(char *buf, int size)
     buf[len-1] = 0;
 }
 
+void print_matrix(int rows, int cols, int mat[rows][cols])
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            printf("%d ",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main()
 {
+    /*
+    sizeof(int) - 4 
+    sizeof(char) - 1
+    sizeof(int*) - 4
+    sizeof(int**) - 4
+    sizeof(long) - 8
+
+    */
     char buf[20] = "";
+
 
     printf("Please enter a string: ");
     read_line(buf, 20);
