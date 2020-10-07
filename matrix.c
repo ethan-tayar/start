@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define M 4
-
+int verif_shriruti(int mat[M][M]);
 int is_diagonal(int mat[M][M]);
 void print_matrix(int rows, int cols, int mat[rows][cols]);
 
@@ -15,7 +15,13 @@ int main()
 		{0,0,0,10}
         
 	};
-
+    int mat2[M][M] =
+	{
+		{12,-7,10,23},
+		{56,11,0,5},
+		{25,-2,37,-1},
+		{-13,0,18,0}
+	};
     // = malloc(M*M*sizeof(int));
     print_matrix(M, M, mat);
 
@@ -28,7 +34,8 @@ int main()
     {
         printf("mat is not diagonal\n");
     }
-
+    print_matrix(M,M,mat2);
+    verif_shriruti(mat2);
     return 0;
 }
 
@@ -57,3 +64,33 @@ void print_matrix(int rows, int cols, int mat[rows][cols])
         printf("\n");
     }
 }
+int verif_shriruti(int mat[M][M]){
+	int i =0;
+	int j=0;
+	int flag1 = 1;
+	int flag2 =1;
+	int flag3 = 1; 
+	for (i = 0; i < M; i++)
+	{
+		for (j = 0; j < M; j++)
+		{
+			if (i > j && mat[i][j] == 0)
+				flag1 = 0;
+
+			if (i == j && mat[i][j] == 0)
+				flag2 = 0;
+
+			if (i < j && mat[i][j] == 0)
+				flag3 = 0;
+		}
+		if (flag1 == 0 && flag2 == 0 && flag3 == 0)
+	{
+		printf("Shriruti \n");
+	}
+    
+    
+    
+}
+}
+	
+	
