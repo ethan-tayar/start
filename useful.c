@@ -9,7 +9,7 @@ void read_line(char *buf, int size)
 {
     fgets(buf, size, stdin);
     int len = strlen(buf);
-    buf[len-1] = 0;
+    buf[len - 1] = 0;
 }
 
 void print_matrix(int rows, int cols, int mat[rows][cols])
@@ -18,10 +18,22 @@ void print_matrix(int rows, int cols, int mat[rows][cols])
     {
         for (int j = 0; j < cols; j++)
         {
-            printf("%d ",mat[i][j]);
+            printf("%d ", mat[i][j]);
         }
         printf("\n");
     }
+}
+
+void print_array(int length, int array[length])
+{
+    printf("[");
+    for (int i = 0; i < length; i++)
+    {
+        printf("%d", array[i]);
+        if (i != length - 1)
+            printf(", ");
+    }
+    printf("]\n");
 }
 
 int main()
@@ -35,7 +47,6 @@ int main()
 
     */
     char buf[20] = "";
-
 
     printf("Please enter a string: ");
     read_line(buf, 20);
